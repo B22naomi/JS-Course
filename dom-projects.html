@@ -2,6 +2,43 @@
 <html lang="en">
 <head>
   <title>Dom Projects</title>
+  <style>
+
+     body{
+      font-family: Arial;
+      
+    }
+    .subscribe-button{
+      background-color: black;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 30px;
+      padding: 10px 15px 10px 15px;
+    }
+
+    .is-subscribed{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+   .cost-input{
+    font-size: 15px;
+    padding: 10px ;
+   }
+
+   .calculate-button{
+    background-color: green;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 12px 15px;
+   }
+
+  </style>
 </head>
 <body>
 
@@ -9,13 +46,13 @@
 
   <button onclick="
     subscribe();
-  " class="js-subscribe-button" >Subscribe</button>
+  " class="js-subscribe-button subscribe-button" >Subscribe</button>
  
   <p>Amazon Shipping Calculator</p>
   <input placeholder="Cost of order" onkeydown="
     handleCostKey(event);
-  " class="js-cost-input">
-  <button onclick="
+  " class="js-cost-input cost-input">
+  <button class="calculate-button" onclick="
     calculateTotal();
   ">Calculate</button>
 
@@ -47,9 +84,10 @@
       const buttonElement = document.querySelector('.js-subscribe-button');
       if (buttonElement.innerHTML === 'Subscribe'){
         buttonElement.innerHTML = 'Subscribed';
-        
+        buttonElement.classList.add('is-subscribed');
       }else {  
         buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
       }   
     }
   </script>
