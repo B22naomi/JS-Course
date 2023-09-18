@@ -22,13 +22,19 @@ function renderTodoList(){
       <button onclick="
         todoList.splice(${i}, 1);
         renderTodoList();
-      " class="delete-todo-button">Delete</button>
+      " class="delete-todo-button js-delete-todo-button">Delete</button>
     `;
     todoListHTML += html;
   }
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 
 }    
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () =>{
+  addTodo();
+});
+
+
 
 function addTodo(){
   const inputElement = document.querySelector('.js-name-input');
